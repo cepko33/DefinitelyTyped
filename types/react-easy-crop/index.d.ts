@@ -23,6 +23,13 @@ export interface Area {
     y: number;
 }
 
+export inteface ImageSize {
+    width: number;
+    height: number;
+    naturalWidth: number;
+    naturalHeight: number;
+}
+
 export interface CropperProps {
     image: string;
     crop: Location;
@@ -51,6 +58,7 @@ export interface CropperProps {
     };
     restrictPosition?: boolean;
     initialCroppedAreaPixels?: Area;
+    onImageLoaded?: (imageSize: ImageSize) => void;
 }
 
 declare class Cropper extends Component<CropperProps> {}
